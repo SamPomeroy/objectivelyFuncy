@@ -18,20 +18,27 @@ function setAge(obj, num){
   return obj
 }
 function giveBirthday(obj){
- if(obj.age >= 1){
-  obj.age += 1
- }else if(!obj.age){ 
-  obj.age = 1
- }
- return obj
-}
+  if(obj.age === undefined){
+    obj.age = 1
+  }else{
+    obj.age ++
+  }
+  }
+//  if(obj.age >= 1){
+//   obj.age += 1
+//  }else if(!obj.age){ 
+//   obj.age = 1
+//  }
+//  return obj
+
+
 function marry(person1, person2){
 //person.married => true
 person1.married = true
 person2.married = true
 //person1.spouseName = person2getFullName
-person1.spouseName = person2.firstName + " " + person2.lastName
-person2.spouseName = person1.firstName + " " + person1.lastName
+person1.spouseName = getFullName(person2)
+person2.spouseName = getFullName(person1)
 }
 function divorce(person1, person2){
   person1.married = false
